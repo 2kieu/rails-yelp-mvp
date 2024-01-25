@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require "faker"
+# TODO: Write a seed to insert 100 posts in the database
+restaurant_category = ["chinese", "italian", "japanese", "french", "belgian"]
+
+5.times do
+  restaurant = Restaurant.new(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: restaurant_category.sample
+  )
+  restaurant.save
+end
