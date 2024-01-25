@@ -10,5 +10,6 @@ Category: <%= @restaurant.category %> </p>
   <% end %>
 </ul>
 
-<%= link_to 'New review', new_restaurant_review_path(@restaurant) %>
+<%= render 'form', review: @review, restaurant: @restaurant %>
+
 <%= link_to "Back to restaurants", restaurants_path %>

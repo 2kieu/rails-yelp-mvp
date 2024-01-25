@@ -20,4 +20,15 @@ restaurant_category = ["chinese", "italian", "japanese", "french", "belgian"]
     category: restaurant_category.sample
   )
   restaurant.save
+
+end
+
+2.times do
+  review = Review.new(
+    content: Faker::Restaurant.review,
+    rating: review_rating.sample,
+    restaurant: restaurant
+  )
+  review.save!
+
 end
